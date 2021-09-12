@@ -5,25 +5,15 @@
   margin-bottom: rem(30);
   border-radius: 12px;
   position: relative;
-  background: $primary;
-
-  :global(.icn) {
-    position: relative;
-    top: rem(2);
-
-    svg {
-      * {
-        fill: $white;
-      }
-    }
-  }
+  border: 1px solid $border;
 
   :global(.badge) {
     position: absolute;
     top: rem(15);
     right: rem(15);
     font-size: rem(12);
-    border: 1px solid rgba($white, .2);
+    border: 1px solid $border;
+    color: $dark;
   }
 
   :global(.badge-success) {
@@ -59,18 +49,25 @@
   &Label {
     text-transform: uppercase;
     font-size: rem(12);
-    color: rgba($white, 0.6);
+    color: $gray-4;
     letter-spacing: 2px;
   }
 
   &Value {
     white-space: nowrap;
-    color: $white;
     font-size: rem(18);
   }
 }
 
 // dark theme
 [data-theme="dark"] {
-  
+  .pool {
+    border: 1px solid transparent;
+    background: $dark-gray-5;
+
+    :global(.badge) {
+      border: 1px solid rgba($white, .2);
+      color: $white;
+    }
+  }  
 }

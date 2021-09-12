@@ -69,7 +69,7 @@ const Pools = () => {
                       }
                     >
                       <strong className="cursor-pointer">
-                        {truncate(pool.pool_id_bech32)}
+                        {truncate(pool.pool_id_bech32, 12)}
                         <span className="icn ms-2">
                           <SVGFiles />
                         </span>
@@ -87,7 +87,7 @@ const Pools = () => {
                       }
                     >
                       <strong className="cursor-pointer">
-                        {truncate(pool.pool_id)}
+                        {truncate(pool.pool_id, 12)}
                         <span className="icn ms-2">
                           <SVGFiles />
                         </span>
