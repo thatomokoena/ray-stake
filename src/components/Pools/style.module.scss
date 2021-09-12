@@ -16,6 +16,12 @@
     color: $dark;
   }
 
+  &Ticker {
+    font-size: rem(32);
+    display: block;
+    margin-bottom: rem(10);
+  }
+
   :global(.badge-success) {
     box-shadow: 0 0 0 rgba($success, 0.4);
     animation: pulse 2s infinite;
@@ -31,6 +37,12 @@
         box-shadow: 0 0 0 0 rgba($success, 0);
       }
     }
+  }
+
+  :global(.icn) {
+    svg {
+      height: rem(24);
+    }  
   }
 
   :global(.ray__btn) {

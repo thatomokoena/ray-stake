@@ -59,6 +59,9 @@ const Pools = () => {
             <div className="col-12 col-sm-6" key={index}>
               <div className={style.pool}>
                 <span className="badge">{isSaturated ? 'SATURATED' : 'ACTIVE'}</span>
+                <strong className={style.poolTicker}>
+                  {formatValue(pool.ticker_orig)}
+                </strong>
                 <div className={style.poolItem}>
                   <div className={style.poolLabel}>Pool Id</div>
                   <div className={style.poolValue}>
@@ -96,16 +99,6 @@ const Pools = () => {
                   </div>
                 </div>
                 <div className="row">
-                  <div className="col-6">
-                    <div className={style.poolItem}>
-                      <div className={style.poolLabel}>Ticker</div>
-                      <div className={style.poolValue}>
-                        <strong className="font-size-24">
-                          {formatValue(pool.ticker_orig)}
-                        </strong>
-                      </div>
-                    </div>
-                  </div>
                   <div className="col-6">
                     <div className={style.poolItem}>
                       <div className={style.poolLabel}>XRAY Rewards</div>
@@ -160,14 +153,6 @@ const Pools = () => {
                       <div className={style.poolLabel}>Blocks Lifetime</div>
                       <div className={style.poolValue}>
                         <strong>{formatValue(pool.blocks_lifetime)}</strong>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-6">
-                    <div className={style.poolItem}>
-                      <div className={style.poolLabel}>Blocks in Epoch</div>
-                      <div className={style.poolValue}>
-                        <strong>{formatValue(pool.blocks_epoch)}</strong>
                       </div>
                     </div>
                   </div>
