@@ -1,0 +1,33 @@
+@import "@/styles/mixins";
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-width: rem(1240);
+  margin: 0 auto;
+  padding: rem(15);
+  
+  @media (max-width: $lg-max-width) {
+    padding: rem(10);
+  }
+}
+
+.body {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+}
+
+.menu {
+  flex-shrink: 0;
+  margin-right: rem(25);
+  width: rem(270);
+}
+
+.content {
+  flex-grow: 1;
+  max-width: 100%;
+  min-width: 0;
+  overflow: hidden;
+}

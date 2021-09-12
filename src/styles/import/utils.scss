@@ -1,0 +1,260 @@
+@import "@/styles/mixins";
+
+.icn {
+  display: inline-flex !important;
+  user-select: none;
+
+  svg {
+    height: rem(18);
+    width: auto;
+  }
+
+  &-sm {
+    svg {
+      height: rem(16);
+      width: auto;
+    }
+  }
+
+  &-lg {
+    svg {
+      height: rem(27);
+      width: auto;
+    }
+  }
+
+  &-fix {
+    svg {
+      position: relative;
+      top: rem(3);
+    }
+  }
+
+  &-success {
+    * {
+      fill: $success !important;
+    }
+  }
+
+  &-primary {
+    * {
+      fill: $blue !important;
+    }
+  }
+}
+
+.ray {
+  &__card {
+    padding: rem(15);
+    // background: $pastel-1;
+    border: 1px solid $gray-2;
+    border-radius: rem(13);
+    height: calc(100% - 1.56rem);
+    margin-bottom: rem(25);
+    position: relative;
+
+    &--last {
+      margin-bottom: 0;
+      height: auto;
+    }
+
+    .spinner-border {
+      position: absolute;
+      top: rem(20);
+      right: rem(20);
+    }
+
+    &__status {
+      position: absolute;
+      top: rem(15);
+      right: rem(25);
+    }
+
+    &__title {
+      font-size: rem(18);
+      font-weight: 400;
+      margin-bottom: rem(5);
+      color: $gray-4;
+    }
+
+    &__amount {
+      font-size: rem(32);
+      font-weight: 700;
+      line-height: 1;
+
+      &__small {
+        font-size: rem(18);
+        font-weight: 400;
+      }
+    }
+  }
+
+  &__count {
+    &__inline {
+      display: inline-block;
+    }
+  }
+
+  &__table {
+    overflow: auto;
+    white-space: nowrap;
+    background: $white;
+    border-radius: 8px;
+  }
+
+  &__line {
+    height: 1px;
+    background: $border;
+    margin: rem(25) 0;
+  }
+
+  &__ticker {
+    display: inline-block;
+    font-size: 62%;
+    border: 1px solid $border;
+    line-height: 100%;
+    padding: rem(4);
+    border-radius: rem(6);
+    font-weight: 700;
+    text-transform: uppercase;
+    vertical-align: baseline;
+    position: relative;
+    top: rem(-2);
+
+    &__lg {
+      padding: rem(4) rem(6);
+      font-size: 62%;
+      position: relative;
+      top: rem(-3);
+      border-radius: rem(9);
+    }
+
+    &__sm {
+      padding: rem(4);
+      font-size: 80%;
+      top: 0;
+      border-radius: rem(6);
+    }
+  }
+
+  &__btn {
+    display: inline-flex;
+    white-space: nowrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 rem(20);
+    color: $white;
+    background: $dark;
+    height: rem(38);
+    border: 1px solid transparent;
+    font-size: rem(16);
+    text-align: center;
+    font-weight: 700;
+    border-radius: rem(13);
+    border: 1px solid transparent !important;
+    @include transition-middle();
+
+    svg {
+      * {
+        fill: $white;
+      }
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: $white;
+      background: lighten($dark, 20%);
+    }
+
+    &[disabled] {
+      background: $white !important;
+      border: 1px solid $border !important;
+      color: $gray-4 !important;
+
+      .icn {
+        svg {
+          * {
+            fill: $gray-5;
+          }
+        }
+      }
+    }
+
+    &--success {
+      background: $success !important;
+      color: $white !important;
+
+      &:hover,
+      &:focus,
+      &:active {
+        background: lighten($success, 7%) !important;
+      }
+    }
+
+    &--disabled {
+      opacity: .6;
+      pointer-events: none;
+    }
+  }
+}
+
+// dark theme
+[data-theme="dark"] {
+  .icn {
+    svg {
+      * {
+        fill: $white;
+      }
+    }
+
+    &-primary {
+      svg {
+        * {
+          fill: $blue-light !important;
+        }
+      }
+    }
+  }
+
+  .ray {
+    &__card {
+      background: $dark-gray-5;
+      border-color: transparent;
+
+      &__title {
+        color: $gray-4;
+      }
+    }
+
+    &__table {
+      background: $dark;
+    }
+
+    &__line {
+      background: $dark-gray-4;
+    }
+      
+    &__ticker {
+      border: 1px solid $dark-gray-3;
+    }
+
+    &__btn {
+      background: $white;
+      color: $black;
+
+      svg {
+        * {
+          fill: $dark;
+        }
+      }
+      
+      &:hover,
+      &:focus,
+      &:active {
+        color: $dark;
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+@import "@/styles/mixins";
+
+// dark theme
+[data-theme="dark"] {
+  .faq {
+    color: $gray-4;
+  
+    h5 {
+      color: $white;
+    }
+  }
+}

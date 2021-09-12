@@ -1,0 +1,24 @@
+@import "@/styles/mixins";
+
+.bread {
+  margin-bottom: rem(30);
+  font-size: rem(21);
+  // background: $pastel-1;
+  // border-radius: rem(13);
+  // padding: rem(13) rem(13) rem(10);
+  padding: rem(17) 0;
+  font-weight: bold;
+  border-bottom: 1px solid $border;
+
+  :global(.icn) {
+    position: relative;
+    top: rem(3);
+  }
+}
+
+// dark theme
+[data-theme="dark"] {
+  .bread {
+    border-color: $dark-gray-4;
+  }
+}

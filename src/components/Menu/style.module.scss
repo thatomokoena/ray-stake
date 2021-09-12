@@ -1,0 +1,149 @@
+@import "@/styles/mixins";
+
+.menu {
+  background: $pastel-1;
+  border-radius: rem(13);
+  padding: rem(13) rem(13) rem(20);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &Links {
+    width: 100%;
+    margin-bottom: rem(20);
+  }
+
+  &Data {
+    padding: rem(10) rem(10) rem(3);
+    border: 1px solid $gray-2;
+    border-radius: rem(13);
+    margin-bottom: rem(20);
+
+    &Item {
+      margin-bottom: rem(7);
+
+      &Title {
+        font-size: rem(12);
+        text-transform: uppercase;
+        color: $gray-4;
+        letter-spacing: 2px;
+      }
+
+      &Amount {
+        font-size: rem(21);
+        font-weight: bold;
+      }
+    }
+  }
+
+  &Footer {
+    margin: auto rem(10) 0;
+    font-size: rem(14);
+    padding: rem(15) 0 0;
+    border-top: 1px solid $gray-2;
+
+    &Cardano {
+      position: relative;
+      top: -2px;
+      svg {
+        width: auto !important;
+        height: rem(18);
+        * {
+          fill: $blue;
+        }
+      }
+    }
+
+    &Logo {
+      display: flex;
+      align-items: center;
+  
+      svg {
+        margin-right: rem(8);
+        height: rem(21) !important;
+        width: auto !important;
+      }
+    }
+  }
+
+  &Btn {
+    background: transparent !important;
+    color: $blue !important;
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    padding: 0 rem(10);
+    font-weight: 400;
+    margin-bottom: rem(3);
+    font-weight: 700;
+
+    svg {
+      * {
+        fill: $blue !important;
+      }
+    }
+
+    &:hover,
+    &:focus,
+    &:active,
+    &Active {
+      background: $blue !important;
+      color: $white !important;
+
+      svg {
+        * {
+          fill: $white !important;
+        }
+      }
+    }
+  }
+}
+
+// dark theme
+[data-theme="dark"] {
+  .menu {
+    background: $dark-gray-5;
+
+    &Data {
+      border-color: $dark-gray-4;
+    }
+
+    &Footer {
+      border-color: $dark-gray-4;
+
+      &Cardano {
+        svg {
+          * {
+            fill: $blue-light;
+          }
+        }
+      }
+    }
+
+    &Btn {
+      background: transparent !important;
+      color: $white !important;
+
+      svg {
+        * {
+          fill: $white !important;
+        }
+      }
+  
+      &:hover,
+      &:focus,
+      &:active,
+      &Active {
+        background: $blue !important;
+        color: $white !important;
+  
+        svg {
+          * {
+            fill: $white !important;
+          }
+        }
+      }
+    }
+  }
+}

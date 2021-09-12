@@ -1,0 +1,22 @@
+@import "@/styles/mixins";
+
+.performance {
+  ul {
+    list-style: none;
+    padding-left: 0;
+
+    li {
+      font-size: rem(18);
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+
+// dark theme
+[data-theme="dark"] {
+  
+}

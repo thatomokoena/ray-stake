@@ -1,0 +1,155 @@
+@import "@/styles/mixins";
+
+html {
+  font-size: 16px;
+  @media (max-width: $lg-max-width) {
+    font-size: 14px;
+  }
+  @media (max-width: $md-max-width) {
+    font-size: 13px;
+  }
+}
+
+body {
+  font-family: $base-font-family;
+  color: $text;
+
+  * {
+    font-variant: normal !important;
+    font-feature-settings: normal !important;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: $blue;
+  cursor: pointer;
+  @include transition-color();
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: $blue-light;
+    text-decoration: none;
+  }
+}
+
+input {
+  outline: none !important;
+  font-family: $base-font-family;
+  color: $text;
+}
+
+button,
+input {
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+strong {
+  font-weight: 700;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: rem(20);
+  font-weight: 400;
+  color: $black;
+}
+
+h1 {
+  font-size: rem(42);
+}
+
+h2 {
+  font-size: rem(36);
+}
+
+h5 {
+  font-size: rem(21);
+}
+
+p {
+  margin-bottom: rem(20);
+}
+
+ul {
+  padding-left: rem(30);
+
+  li {
+    margin-bottom: rem(8);
+  }
+}
+
+sup {
+  font-size: 60%;
+  font-weight: normal !important;
+}
+
+[role="button"] {
+  outline: none;
+}
+
+::placeholder {
+  color: $gray-4 !important;
+}
+
+code {
+  display: inline-block;
+  padding: 0 rem(7);
+  background: $gray-2;
+  border-radius: 20px;
+  font-size: 80%;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+// disable transitions
+[data-disable-transitions="true"] {
+  * {
+    transition: none !important;
+  }
+}
+
+// dark theme
+[data-theme="dark"] {
+  body {
+    background: $dark;
+    color: $white;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-bottom: rem(20);
+    font-weight: 400;
+    color: $gray-4;
+  }
+
+  a {
+    color: $blue-light;
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: $white;
+    }
+  }
+
+  ::placeholder {
+    color: $dark-gray-3 !important;
+  }
+
+  code {
+    background: $dark-gray-3;
+  }
+}
