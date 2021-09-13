@@ -72,7 +72,7 @@ const Calculator = () => {
                 <li>
                   ADA ROI:{" "}
                   <strong>
-                    ~ 5% <sup>/ Year</sup>
+                    ~ 5% / Year
                   </strong>
                 </li>
               </ul>
@@ -83,7 +83,7 @@ const Calculator = () => {
                     {format(totalAda, 2)}{" "}
                     <span className="ray__ticker ray__ticker__sm">ADA</span>
                   </strong>{" "}
-                  <sup>{format(totalAda * prices.ada, 2)}$</sup>
+                  <sup>{format(totalAda * (prices?.cardano?.usd || 0), 2)}$</sup>
                 </li>
                 <li>
                   Month Returns:{" "}
@@ -91,7 +91,7 @@ const Calculator = () => {
                     {format(totalAda / 12, 2)}{" "}
                     <span className="ray__ticker ray__ticker__sm">ADA</span>
                   </strong>{" "}
-                  <sup>{format((totalAda / 12) * prices.ada, 2)}$</sup>
+                  <sup>{format((totalAda / 12) * (prices?.cardano?.usd || 0),  2)}$</sup>
                 </li>
                 <li>
                   Epoch Returns:{" "}
@@ -99,7 +99,7 @@ const Calculator = () => {
                     {format(totalAda / 73, 2)}{" "}
                     <span className="ray__ticker ray__ticker__sm">ADA</span>
                   </strong>{" "}
-                  <sup>{format((totalAda / 73) * prices.ada, 2)}$</sup>
+                  <sup>{format((totalAda / 73) * (prices?.cardano?.usd || 0), 2)}$</sup>
                 </li>
               </ul>
             </div>
@@ -109,7 +109,7 @@ const Calculator = () => {
                   XRAY Rate: {" "}
                   <strong>
                     {rate / 1000000} <span className="ray__ticker ray__ticker__sm">ADA</span> / 1{" "}
-                    <span className="ray__ticker ray__ticker__sm">XRAY</span> <sup>/ Epoch</sup>
+                    <span className="ray__ticker ray__ticker__sm">XRAY</span> / Epoch
                   </strong>
                 </li>
               </ul>
