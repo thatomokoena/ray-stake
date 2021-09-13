@@ -23,7 +23,7 @@ const ChartTrackXray = ({ history, epochCut }) => {
         backgroundColor: ["#355aeb"],
         hoverBackgroundColor: ["#355aeb"],
         borderColor: ["#355aeb"],
-        postfix: "XRAY",
+        postfix: "ADA",
       },
     ],
   }
