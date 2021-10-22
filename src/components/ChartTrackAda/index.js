@@ -7,7 +7,7 @@ const ChartTrackXray = ({ history, epochCut }) => {
   const theme = useSelector((state) => state.settings.theme)
   const isLight = theme === 'default'
 
-  const datasetProcessed = ([...history] || []).reverse().filter((r) => r.earnedIn.number !== epochCut)
+  const datasetProcessed = ([...history] || []).reverse().filter((r) => r.earnedIn.number !== epochCut).sort((a, b) => a.earnedIn.number - b.earnedIn.number)
 
   const chartData = {
     labels: datasetProcessed.map((epoch) => epoch.earnedIn.number),
